@@ -67,12 +67,18 @@ async function processAndInsertPodcasts(client, podcastCollection, podcasts) {
     chunkOverlap: 50,
   });
 
+  // Initialize the overall chunk counter
+  let overallChunkCounter = 0;
+
   // Iterate over each podcast in the dataset
   for (let podcast of podcasts) {
     const [number, guest, title, transcription] = podcast;
 
     // Split the transcription into smaller chunks
     const chunkedTranscription = await textSplitter.splitText(transcription);
+
+    // Initialize the episode chunk counter
+    let episodeChunkCounter = 0;
 
     // Iterate over each chunk and create an object for insertion
     for (const chunk of chunkedTranscription) {
@@ -83,13 +89,22 @@ async function processAndInsertPodcasts(client, podcastCollection, podcasts) {
         transcription: chunk,
       };
 
+      // Increment the overall and episode chunk counters
+      overallChunkCounter++;
+      episodeChunkCounter++;
+
       // Attempt to insert the podcast object into the collection
       try {
         await podcastCollection.data.insert(podcastObject);
 
-        console.log(`Inserted episode ${number} chunk successfully`);
+        console.log(
+          `Inserted episode #${number} chunk #${episodeChunkCounter} successfully`
+        );
       } catch (error) {
-        console.error(`Failed to insert episode ${number} chunk:`, error);
+        console.error(
+          `Failed to insert episode #${number} chunk #${episodeChunkCounter}:`,
+          error
+        );
       }
     }
   }
