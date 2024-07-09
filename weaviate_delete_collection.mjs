@@ -1,19 +1,21 @@
 import weaviate from "weaviate-client";
+import "dotenv/config";
 
 async function main() {
   /**
-   * Deletes the 'Podcast' collection from the local Weaviate instance.
+   * Connects to the local Weaviate instance and deletes a collection. Catches and
+   * prints any errors that occur, and finally closes the client connection.
    *
-   * @return {Promise<void>} Promise that resolves when the 'Podcast' collection is deleted successfully.
-   * @throws {Error} If an error occurs while deleting the 'Podcast' collection.
+   * @return {Promise<void>} Promise that resolves when the collection is deleted successfully.
+   * @throws {Error} If an error occurs while deleting the collection.
    */
 
   // Connect to the local Weaviate instance
   const client = await weaviate.connectToLocal();
 
   try {
-    // Delete the 'Podcast' collection
-    await client.collections.delete("Podcast");
+    // Delete the collection
+    await client.collections.delete(process.env.WEAVIATE_COLLECTION_NAME);
 
     console.log("Collection deleted successfully");
   } catch (error) {

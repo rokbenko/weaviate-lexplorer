@@ -1,33 +1,31 @@
 import weaviate from "weaviate-client";
+import "dotenv/config";
 
 async function main() {
   /**
-   * Connects to the local Weaviate instance, retrieves the 'Podcast' collection,
-   * checks if the collection exists, creates an iterator for the items in the 'Podcast' collection,
-   * loops through each item and prints it to the console. Catches and prints any errors that occur,
-   * and finally closes the client connection.
+   * Connects to the local Weaviate instance, retrieves a collection,
+   * creates an iterator for the items in the retrieved collection,
+   * loops through each item and prints it to the console. Catches and
+   * prints any errors that occur, and finally closes the client connection.
    *
-   * @return {Promise<void>} Promise that resolves when the function completes successfully.
+   * @return {Promise<void>} Promise that resolves when the collection is iterated successfully.
+   * @throws {Error} If an error occurs while iterating the collection.
    */
 
   // Connect to the local Weaviate instance
   const client = await weaviate.connectToLocal();
 
   try {
-    // Retrieve the 'Podcast' collection from Weaviate
-    const podcastCollection = await client.collections.get("Podcast");
+    // Retrieve a collection from Weaviate
+    const collection = await client.collections.get(
+      process.env.WEAVIATE_COLLECTION_NAME
+    );
 
-    // Check if the 'Podcast' collection exists
-    if (!podcastCollection) {
-      console.log("Collection not found");
-      return;
-    }
+    // Create an iterator for the items in the retrieved collection
+    const items = await collection.iterator();
 
-    // Create an iterator for the items in the 'Podcast' collection
-    const podcastItems = await podcastCollection.iterator();
-
-    // Loop through each item in the 'Podcast' collection
-    for await (let item of podcastItems) {
+    // Loop through each item in the retrieved collection
+    for await (let item of items) {
       // Print the item to the console
       console.log(item);
     }
