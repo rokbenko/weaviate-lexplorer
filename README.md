@@ -16,6 +16,8 @@ Enjoying what you find in this repository? Your star ⭐ would be greatly apprec
 
 Weaviate Lexplorer is your 100% open-source go-to tool for deep insights from Lex Fridman's podcasts. Using hybrid search with Weaviate's vector database, it lets you dive into key discussions by analyzing podcast transcriptions in chunks. With a user-friendly input and slider interface, explore now and uncover the richness of Lex Fridman's podcasts.*
 
+👉 See the app [demonstration](https://github.com/rokbenko/weaviate-lexplorer/blob/main/demonstration.gif).
+
 <sub>\*Inspired by [QuoteFinder](https://github.com/weaviate/quote-finder/tree/main).</sub>
 
 <br>
