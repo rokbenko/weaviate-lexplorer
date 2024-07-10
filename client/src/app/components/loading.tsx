@@ -33,7 +33,7 @@ export default function Loading({ times: number = 1 }: LoadingProps) {
       <Stack spacing={2} className="w-full">
         <Stack>
           <Stack spacing={1} direction="row">
-            <Skeleton height="3rem" width="50%" />
+            <Skeleton animation="wave" height="3rem" width="50%" />
             <Skeleton
               animation="wave"
               variant="text"
@@ -41,27 +41,27 @@ export default function Loading({ times: number = 1 }: LoadingProps) {
             />
           </Stack>
           <Stack>
-            <Skeleton height="2rem" width="25%" />
+            <Skeleton animation="wave" height="2rem" width="25%" />
           </Stack>
         </Stack>
         <Stack>
-          <Skeleton height="4rem" width="3rem" />
+          <Skeleton animation="wave" height="4rem" width="3rem" />
         </Stack>
         <Stack className="w-[80%] flex justify-center mx-auto">
           <Stack sx={{ transform: "translateX(70px)" }}>
-            <Skeleton height="1.25rem" width="95%" />
-            <Skeleton height="1.25rem" width="99%" />
-            <Skeleton height="1.25rem" width="97%" />
-            <Skeleton height="1.25rem" width="94%" />
-            <Skeleton height="1.25rem" width="96%" />
-            <Skeleton height="1.25rem" width="33.33%" />
+            <Skeleton animation="wave" height="1.25rem" width="95%" />
+            <Skeleton animation="wave" height="1.25rem" width="99%" />
+            <Skeleton animation="wave" height="1.25rem" width="97%" />
+            <Skeleton animation="wave" height="1.25rem" width="94%" />
+            <Skeleton animation="wave" height="1.25rem" width="96%" />
+            <Skeleton animation="wave" height="1.25rem" width="33.33%" />
           </Stack>
         </Stack>
         <Stack className="h-full flex items-end">
-          <Skeleton height="4rem" width="3rem" />
+          <Skeleton animation="wave" height="4rem" width="3rem" />
         </Stack>
         <Stack>
-          <Skeleton height="1.5rem" width="33.33%" />
+          <Skeleton animation="wave" height="1.5rem" width="33.33%" />
         </Stack>
       </Stack>
     </Card>
