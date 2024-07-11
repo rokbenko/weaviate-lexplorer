@@ -41,7 +41,7 @@ docker compose up -d
 ```
 
 > [!IMPORTANT]
-> Having Docker installed is a prerequisite. If you don't have Docker installed, [install](https://www.docker.com/products/docker-desktop/) it.
+> Having Docker installed is a prerequisite. If you don't have Docker installed, [install](https://www.docker.com/) it.
 
 ### Step 3: Set up Ollama
 
@@ -190,7 +190,13 @@ Weaviate Lexplorer works with the following tech stack:
 
 | Tech                                                                               | Version            |
 | ---------------------------------------------------------------------------------- | ------------------ |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/)                  | `4.26.1`           |
+| [Ollama](https://ollama.com/)                                                      | `0.1.48`           |
+| [Node.js](https://nodejs.org/en)                                                   | `21.2.0`           |
+| [CSV parse](https://www.npmjs.com/package/csv-parse)                               | `5.5.6`            |
+| [LangChain text splitters](https://www.npmjs.com/package/@langchain/textsplitters) | `0.0.3`            |
 | [Weaviate JS/TS client](https://www.npmjs.com/package/weaviate-client)             | `3.0.8`            |
+| [Dotenv](https://www.npmjs.com/package/dotenv)                                     | `16.4.5`           |
 | [Next.js](https://www.npmjs.com/package/next)                                      | `14.2.4`           |
 | [React](https://www.npmjs.com/package/react)                                       | `^18`              |
 | [TypeScript](https://www.npmjs.com/package/typescript)                             | `^5`               |
@@ -200,10 +206,6 @@ Weaviate Lexplorer works with the following tech stack:
 | [Material Lab](https://www.npmjs.com/package/@mui/lab)                             | `^5.0.0-alpha.171` |
 | [Material Icons](https://www.npmjs.com/package/@mui/icons-material)                | `^5.16.0`          |
 | [ESLint](https://www.npmjs.com/package/eslint)                                     | `^8`               |
-| [Node.js](https://nodejs.org/en)                                                   | `21.2.0`           |
-| [CSV parse](https://www.npmjs.com/package/csv-parse)                               | `5.5.6`            |
-| [LangChain text splitters](https://www.npmjs.com/package/@langchain/textsplitters) | `0.0.3`            |
-| [Dotenv](https://www.npmjs.com/package/dotenv)                                     | `16.4.5`           |
 
 <br>
 
